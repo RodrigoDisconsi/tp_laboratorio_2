@@ -10,13 +10,42 @@ namespace Entidades
     {
         double numero;
 
+        private string SetNumero
+        {
+            set
+            {
+                this.numero = ValidarNumero(value);
+            }
+        }
 
+        #region Constructores
+
+        public Numero()
+        {
+            this.numero = 0;
+        }
+
+        public Numero(double numero)
+        {
+            this.numero = numero;
+        }
+
+        //public Numero(string numero) :  this(double.TryParse(numero, this.numero));
+        public Numero(string numero)
+        {
+            this.SetNumero = numero;
+        }
+
+        #endregion
+
+        #region Conversiones
         public static string DecimalBinario(double entero)
         {
-            string aux = string.Empty;
+            string aux = "";
+            int auxNumero = (int)entero;
             do
             {
-                if (entero % 2 == 0)
+                if (auxNumero % 2 == 0)
                 {
                     aux = "0" + aux;
                 }
@@ -24,8 +53,8 @@ namespace Entidades
                 {
                     aux = "1" + aux;
                 }
-                entero = entero / 2;
-            } while (entero > 1);
+                auxNumero = auxNumero / 2;
+            } while (auxNumero >= 1);
             return aux;
         }
 
@@ -39,9 +68,9 @@ namespace Entidades
             for (int i = 0; i < len; i++)
             {
                 aux = binario[i];
-                if(aux != '1' && aux != '0')
+                if (aux != '1' && aux != '0')
                 {
-                    retorno = "";
+                    retorno = "Valor inválido";
                     break;
                 }
                 if (aux == '1')
@@ -55,19 +84,57 @@ namespace Entidades
             return retorno;
         }
 
-        public static string DecimalBinario (string numero)
+        public static string DecimalBinario(string numero)
         {
             string retorno = "";
             double aux;
-            if(double.TryParse(retorno, out aux))
+            if (double.TryParse(numero, out aux))
             {
                 retorno = Numero.DecimalBinario(aux);
             }
+            else
+            {
+                retorno = "Valor inválido";
+            }
+            return retorno;
+        }
+        #endregion
+
+        #region Operadores
+
+        public static double operator +(Numero num1, Numero num2)
+        {
+            return num1.numero + num2.numero;
+        }
+
+        public static double operator -(Numero num1, Numero num2)
+        {
+            return num1.numero - num2.numero;
+        }
+
+        public static double operator *(Numero num1, Numero num2)
+        {
+            return num1.numero * num2.numero;
+        }
+
+        public static double operator /(Numero num1, Numero num2)
+        {
+            double aux = double.MinValue;
+            if(num2.numero != 0)
+            {
+                aux = num1.numero / num2.numero;
+            }
+            return aux;
+        }
+
+        #endregion
+
+        private static double ValidarNumero(string Numero)
+        {
+            double retorno = 0;
+            double.TryParse(Numero, out retorno);
             return retorno;
         }
 
-
-
-        
     }
 }

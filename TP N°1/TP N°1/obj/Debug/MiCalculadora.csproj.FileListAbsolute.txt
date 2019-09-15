@@ -1,0 +1,13 @@
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\bin\Debug\TP1.exe.config
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\bin\Debug\TP1.exe
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\bin\Debug\TP1.pdb
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\bin\Debug\Entidades.dll
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\bin\Debug\Entidades.pdb
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\obj\Debug\MiCalculadora.csprojAssemblyReference.cache
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\obj\Debug\TP1.FormCalculadora.resources
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\obj\Debug\TP1.Properties.Resources.resources
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\obj\Debug\MiCalculadora.csproj.GenerateResource.cache
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\obj\Debug\MiCalculadora.csproj.CoreCompileInputs.cache
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\obj\Debug\MiCalculadora.csproj.CopyComplete
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\obj\Debug\TP1.exe
+D:\Github\tp_laboratorio_2\TP N°1\TP N°1\obj\Debug\TP1.pdb
