@@ -98,16 +98,16 @@ namespace Entidades_2018
         /// <returns></returns>
         public static Changuito operator +(Changuito c, Producto p)
         {
-            foreach (Producto v in c.productos)
-            {
-                if (v == p)
-                {  
-                    return c;
-                }
-                    
-            }
             if(c.productos.Count < c.espacioDisponible)
             {
+                foreach (Producto v in c.productos)
+                {
+                    if (v == p)
+                    {  
+                        return c;
+                    }
+                    
+                }
                 c.productos.Add(p);
             }
             return c;
