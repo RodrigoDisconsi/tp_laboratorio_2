@@ -37,7 +37,7 @@ namespace Entidades_2018
         /// <param name="tipo"></param>
         public Leche(EMarca marca, string codigo, ConsoleColor color, ETipo tipo) : base(codigo, marca, color)
         {
-            tipo = tipo;
+            this.tipo = tipo;
         }
 
         #endregion
