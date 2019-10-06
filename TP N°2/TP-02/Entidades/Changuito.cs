@@ -46,7 +46,7 @@ namespace Entidades_2018
         /// <returns></returns>
         public string ToString()
         {
-            return this.Mostrar(this, ETipo.Todos);
+            return Changuito.Mostrar(this, ETipo.Todos);
         }
         #endregion
 
@@ -59,43 +59,30 @@ namespace Entidades_2018
         /// <param name="c">Elemento a exponer</param>
         /// <param name="ETipo">Tipos de ítems de la lista a mostrar</param>
         /// <returns></returns>
-        public string Mostrar(Changuito c, ETipo tipo)
+        public static string Mostrar(Changuito c, ETipo tipo)
         {
             StringBuilder sb = new StringBuilder();
-
             sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles\n", c.productos.Count, c.espacioDisponible);
             sb.AppendLine("");
             foreach (Producto v in c.productos)
             {
-                //switch (tipo)
-                //{
-                //    case ETipo.Snacks:
-                //        if (v is Snacks)
-                //            sb.AppendLine(v.Mostrar());
-                //        break;
-                //    case ETipo.Dulce:
-                //        if (v is Dulce)
-                //            sb.AppendLine(v.Mostrar());
-                //        break;
-                //    case ETipo.Leche:
-                //        if (v is Leche)
-                //            sb.AppendLine(v.Mostrar());
-                //        break;
-                //    default:
-                //        sb.AppendLine(v.Mostrar());
-                //        break;
-                //}
-                if ((tipo == ETipo.Snacks || tipo == ETipo.Todos) && v is Snacks)
+                switch (tipo)
                 {
-                    sb.AppendLine(((Snacks)v).Mostrar());
-                }
-                if ((tipo == ETipo.Dulce || tipo == ETipo.Todos) && v is Dulce)
-                {
-                    sb.AppendLine(((Dulce)v).Mostrar());
-                }
-                if ((tipo == ETipo.Leche || tipo == ETipo.Todos) && v is Leche)
-                {
-                    sb.AppendLine(((Leche)v).Mostrar());
+                    case ETipo.Snacks:
+                        if (v is Snacks)
+                            sb.AppendLine(v.Mostrar());
+                        break;
+                    case ETipo.Dulce:
+                        if (v is Dulce)
+                            sb.AppendLine(v.Mostrar());
+                        break;
+                    case ETipo.Leche:
+                        if (v is Leche)
+                            sb.AppendLine(v.Mostrar());
+                        break;
+                    default:
+                        sb.AppendLine(v.Mostrar());
+                        break;
                 }
             }
             return sb.ToString();

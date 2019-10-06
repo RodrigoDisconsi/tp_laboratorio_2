@@ -42,7 +42,7 @@ namespace Entidades_2018
         /// Publica todos los datos del snack incluyendo los de la clase base.
         /// </summary>
         /// <returns></returns>
-        public string Mostrar()
+        public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 

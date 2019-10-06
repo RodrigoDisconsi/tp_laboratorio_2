@@ -52,7 +52,7 @@ namespace Entidades_2018
         /// Publica todos los datos del Producto.
         /// </summary>
         /// <returns></returns>
-        public string Mostrar()
+        public virtual string Mostrar()
         {
             return (string)this;
         }
