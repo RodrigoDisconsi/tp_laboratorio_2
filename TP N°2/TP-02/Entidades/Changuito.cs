@@ -70,30 +70,30 @@ namespace Entidades_2018
                 //switch (tipo)
                 //{
                 //    case ETipo.Snacks:
-                //        if(v is Snacks)
-                //           sb.AppendLine(v.Mostrar());
+                //        if (v is Snacks)
+                //            sb.AppendLine(v.Mostrar());
                 //        break;
                 //    case ETipo.Dulce:
-                //        if(v is Dulce)
+                //        if (v is Dulce)
                 //            sb.AppendLine(v.Mostrar());
                 //        break;
                 //    case ETipo.Leche:
-                //        if(v is Leche)
+                //        if (v is Leche)
                 //            sb.AppendLine(v.Mostrar());
                 //        break;
                 //    default:
                 //        sb.AppendLine(v.Mostrar());
                 //        break;
                 //}
-                if((tipo == ETipo.Snacks || tipo == ETipo.Todos) && v is Snacks)
+                if ((tipo == ETipo.Snacks || tipo == ETipo.Todos) && v is Snacks)
                 {
                     sb.AppendLine(((Snacks)v).Mostrar());
                 }
-                if((tipo == ETipo.Dulce || tipo == ETipo.Todos) && v is Dulce)
+                if ((tipo == ETipo.Dulce || tipo == ETipo.Todos) && v is Dulce)
                 {
                     sb.AppendLine(((Dulce)v).Mostrar());
-                }  
-                if((tipo == ETipo.Leche || tipo == ETipo.Todos) && v is Leche)
+                }
+                if ((tipo == ETipo.Leche || tipo == ETipo.Todos) && v is Leche)
                 {
                     sb.AppendLine(((Leche)v).Mostrar());
                 }
