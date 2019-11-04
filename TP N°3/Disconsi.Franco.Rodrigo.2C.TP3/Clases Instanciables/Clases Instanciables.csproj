@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9A6D245B-78EA-4D0A-B4C6-6CB98D23F31A}</ProjectGuid>
+    <ProjectGuid>{92E28770-A635-4297-A9D4-082527574AEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Clases_Abstractas</RootNamespace>
-    <AssemblyName>Clases Abstractas</AssemblyName>
+    <RootNamespace>Clases_Instanciables</RootNamespace>
+    <AssemblyName>Clases Instanciables</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,11 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Persona.cs" />
+    <Compile Include="Alumno.cs" />
+    <Compile Include="Jornada.cs" />
+    <Compile Include="Profesor.cs" />
+    <Compile Include="Universidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Universitario.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Archivos\Archivos.csproj">
+      <Project>{588468e1-8bff-455b-86f0-df2ccfbd50f4}</Project>
+      <Name>Archivos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clases Abstractas\Clases Abstractas.csproj">
+      <Project>{9a6d245b-78ea-4d0a-b4c6-6cb98d23f31a}</Project>
+      <Name>Clases Abstractas</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Excepciones\Excepciones.csproj">
       <Project>{ab190b38-1cee-4686-a1a1-ea75ffb733d7}</Project>
       <Name>Excepciones</Name>
