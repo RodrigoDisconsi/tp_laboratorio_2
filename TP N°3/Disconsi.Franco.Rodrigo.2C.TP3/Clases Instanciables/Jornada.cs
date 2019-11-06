@@ -109,8 +109,13 @@ namespace Clases_Instanciables
         {
             StringBuilder rtn = new StringBuilder();
             rtn.AppendLine("JORNADA: ");
-            rtn.AppendLine($"CLASE DE {this.clase} POR NOMBRE COMPLETO: {this.instructor.Apellido}, {this.instructor.Nombre}");
-            rtn.AppendLine($"NACIONALIDAD: {this.instructor.Nacionalidad}");
+            rtn.Append($"CLASE DE {this.clase} POR");
+            rtn.AppendLine(this.instructor.ToString());
+            rtn.AppendLine("ALUMNOS: ");
+            foreach(Alumno aux in this.alumnos)
+            {
+                rtn.AppendLine(aux.ToString());
+            }
             return rtn.ToString();
         }
 

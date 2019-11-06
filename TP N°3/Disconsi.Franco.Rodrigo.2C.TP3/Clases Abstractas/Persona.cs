@@ -108,7 +108,7 @@ namespace Clases_Abstractas
 
 
         #region Validaciones
-        public int ValidarDni(Enacionalidad nacionalidad, string dni)
+        private int ValidarDni(Enacionalidad nacionalidad, string dni)
         {
             int retorno;
             if (int.TryParse(dni, out retorno) && dni.Length < 9 && retorno >= 1 && retorno <= 99999999)
@@ -128,12 +128,12 @@ namespace Clases_Abstractas
             }
         }
 
-        public int ValidarDni(Enacionalidad nacionalidad, int dni)
+        private int ValidarDni(Enacionalidad nacionalidad, int dni)
         {
             return this.ValidarDni(nacionalidad, dni.ToString());
         }
 
-        public string ValidarNombreApellido(string dato)
+        private string ValidarNombreApellido(string dato)
         {
             if (Regex.IsMatch(dato, "^[a - zA - Z] + $"))
             {
@@ -152,7 +152,9 @@ namespace Clases_Abstractas
         public override string ToString()
         {
             StringBuilder rtn = new StringBuilder();
-            return "";
+            rtn.AppendLine($"NOMBRE COMPLETO: {this.apellido}, {this.nombre}");
+            rtn.AppendLine($"NACIONALIDAD: {this.nacionalidad}");
+            return rtn.ToString();
         }
     }
 }

@@ -46,12 +46,19 @@ namespace Clases_Instanciables
 
         public override string ToString()
         {
-            return "";
+            return this.MostrarDatos();
         }
 
         protected override string MostrarDatos()
         {
-            return "";
+            StringBuilder rtn = new StringBuilder();
+            rtn.AppendLine(base.MostrarDatos());
+            rtn.AppendLine("CLASES DEL DÍA: ");
+            foreach(Universidad.EClases aux in this.clasesDelDia)
+            {
+                rtn.AppendLine($"{aux}");
+            }
+            return rtn.ToString();
         }
 
         private void _randomClase()

@@ -49,12 +49,16 @@ namespace Clases_Instanciables
 
         protected override string MostrarDatos()
         {
-            return "";
+            StringBuilder rtn = new StringBuilder();
+            rtn.AppendLine(base.MostrarDatos());
+            rtn.AppendLine($"ESTADO DE CUENTA: {this.estadoCuenta}");
+            rtn.AppendLine($"TOMA CLASES DE {this.clasesQueToma}");
+            return rtn.ToString();
         }
 
         public override string ToString()
         {
-            return "";  
+            return this.MostrarDatos();  
         }
 
         #endregion

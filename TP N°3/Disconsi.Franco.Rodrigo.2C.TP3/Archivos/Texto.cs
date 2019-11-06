@@ -8,7 +8,7 @@ using Excepciones;
 
 namespace Archivos
 {
-    public class Texto : IArchivo <string>
+    public class Texto : IArchivo<string>
     {
         public bool Guardar(string archivo, string datos)
         {
@@ -37,6 +37,22 @@ namespace Archivos
             {
                 throw new ArchivoException(e);
                 //return false;
+            }
+        }
+
+        public bool Leer(string archivo, out string datos)
+        {
+            try
+            {
+                using(StreamReader leer = new StreamReader(archivo))
+                {
+                   datos = leer.ReadToEnd();
+                }
+                return true;
+            }
+            catch(Exception e)
+            {
+                throw new ArchivoException(e);
             }
         }
     }

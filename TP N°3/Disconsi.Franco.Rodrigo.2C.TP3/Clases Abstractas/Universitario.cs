@@ -24,7 +24,10 @@ namespace Clases_Abstractas
 
         protected virtual string MostrarDatos()
         {
-            return "";
+            StringBuilder rtn = new StringBuilder();
+            rtn.AppendLine(base.ToString());
+            rtn.AppendLine($"LEGAJO NÚMERO: {this.legajo}");
+            return rtn.ToString();
         }
         protected abstract string ParticiparEnClase();
         public override bool Equals(object obj)
