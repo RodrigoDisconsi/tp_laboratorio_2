@@ -74,29 +74,21 @@ namespace Clases_Instanciables
 
         public static bool Guardar(Jornada j)
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            path += "\\Jornada.txt";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+ "\\Jornada.txt";
             Texto texto = new Texto();
             return texto.Guardar(path, j.ToString());
                 
         }
 
-        //public string Leer()
-        //{
-        //    string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-        //    path += "\\Jornada.txt";
-        //    try
-        //    {
-        //        using(StreamReader archivo = new StreamReader(path))
-        //        {
-        //            return archivo.ReadToEnd();
-        //        }
-        //    }
-        //    catch(Exception e)
-        //    {
-        //        throw new ArchivoException(e);
-        //    }
-        //}
+        public string Leer()
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Jornada.txt";
+            Texto texto = new Texto();
+            string rtn = "";
+            texto.Leer(path, out rtn);
+            return rtn;
+            
+        }
 
         public override string ToString()
         {
