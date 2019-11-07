@@ -62,7 +62,7 @@ namespace Clases_Instanciables
             this.alumnos = new List<Alumno>();
         }
 
-        public Jornada(Universidad.EClases clase, Profesor instructor)
+        public Jornada(Universidad.EClases clase, Profesor instructor) : this()
         {
             this.clase = clase;
             this.instructor = instructor;
@@ -110,12 +110,7 @@ namespace Clases_Instanciables
 
         public static bool operator ==(Jornada j , Alumno a)
         {
-            foreach(Alumno aux in j.alumnos)
-            {
-                if (aux == a)
-                    return true;
-            }
-            return false;
+            return (a == j.clase);
         }
 
         public static bool operator !=(Jornada j, Alumno a)
@@ -125,10 +120,14 @@ namespace Clases_Instanciables
 
         public static Jornada operator +(Jornada j, Alumno a)
         {
-            if(j != a)
+            foreach(Alumno aux in j.alumnos)
             {
-                j.alumnos.Add(a);
+                if(aux.Equals(a))
+                {
+                    return j;
+                }
             }
+            j.alumnos.Add(a);
             return j;
         }
 

@@ -30,9 +30,11 @@ namespace Clases_Abstractas
             return rtn.ToString();
         }
         protected abstract string ParticiparEnClase();
+
         public override bool Equals(object obj)
         {
-            return obj is Universitario;
+            return (this.GetType() == obj.GetType() && (((Universitario)obj).legajo == this.legajo 
+                || ((Universitario)obj).DNI == this.DNI));
         }
 
         #endregion
@@ -52,6 +54,8 @@ namespace Clases_Abstractas
         {
             return !(u1 == u2);
         }
+
+
 
         #endregion
     }
