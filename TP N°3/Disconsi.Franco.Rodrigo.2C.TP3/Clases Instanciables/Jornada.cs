@@ -77,15 +77,8 @@ namespace Clases_Instanciables
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             path += "\\Jornada.txt";
             Texto texto = new Texto();
-            try
-            {
-                texto.Guardar(path, j.ToString());
-                return true;
-            }
-            catch(ArchivoException e)
-            {
-                throw e;
-            }
+            return texto.Guardar(path, j.ToString());
+                
         }
 
         //public string Leer()

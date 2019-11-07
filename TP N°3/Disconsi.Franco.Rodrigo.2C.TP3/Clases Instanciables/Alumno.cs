@@ -52,7 +52,7 @@ namespace Clases_Instanciables
             StringBuilder rtn = new StringBuilder();
             rtn.AppendLine(base.MostrarDatos());
             rtn.AppendLine($"ESTADO DE CUENTA: {this.estadoCuenta}");
-            rtn.AppendLine($"TOMA CLASES DE {this.clasesQueToma}");
+            rtn.AppendLine(this.ParticiparEnClase());
             return rtn.ToString();
         }
 

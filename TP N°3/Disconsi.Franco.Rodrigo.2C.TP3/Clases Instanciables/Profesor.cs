@@ -53,11 +53,7 @@ namespace Clases_Instanciables
         {
             StringBuilder rtn = new StringBuilder();
             rtn.AppendLine(base.MostrarDatos());
-            rtn.AppendLine("CLASES DEL DÍA: ");
-            foreach(Universidad.EClases aux in this.clasesDelDia)
-            {
-                rtn.AppendLine($"{aux}");
-            }
+            rtn.AppendLine(this.ParticiparEnClase());
             return rtn.ToString();
         }
 

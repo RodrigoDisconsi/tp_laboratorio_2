@@ -36,7 +36,6 @@ namespace Archivos
             catch (Exception e)
             {
                 throw new ArchivoException(e);
-                //return false;
             }
         }
 
