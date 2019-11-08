@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clases_Abstractas
+namespace EntidadesAbstractas
 {
     public abstract class Universitario : Persona
     {
@@ -15,9 +15,9 @@ namespace Clases_Abstractas
 
         }
 
-        public Universitario(int legajo, string nombre, string apellido, string dni, Enacionalidad nacionalidad)
+        public Universitario(int legajo, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(nombre, apellido, dni, nacionalidad)
         {
-
+            this.legajo = legajo;
         }
 
         #region Métodos
@@ -26,7 +26,7 @@ namespace Clases_Abstractas
         {
             StringBuilder rtn = new StringBuilder();
             rtn.AppendLine(base.ToString());
-            rtn.AppendLine($"LEGAJO NÚMERO: {this.legajo}");
+            rtn.Append($"LEGAJO NÚMERO: {this.legajo}");
             return rtn.ToString();
         }
         protected abstract string ParticiparEnClase();

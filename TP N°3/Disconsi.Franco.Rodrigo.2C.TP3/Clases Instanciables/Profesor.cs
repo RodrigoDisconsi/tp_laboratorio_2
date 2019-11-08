@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Clases_Abstractas;
+using EntidadesAbstractas;
 
 namespace Clases_Instanciables
 {
@@ -23,7 +23,7 @@ namespace Clases_Instanciables
             
         }
 
-        public Profesor(int id, string nombre, string apellido, string dni, Enacionalidad nacionalidad) : base(id, nombre, apellido, dni, nacionalidad)
+        public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(id, nombre, apellido, dni, nacionalidad)
         {
             this.clasesDelDia = new Queue<Universidad.EClases>();
             this._randomClase();

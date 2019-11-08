@@ -8,6 +8,7 @@ using Archivos;
 
 namespace Clases_Instanciables
 {
+    [Serializable]
     public class Universidad
     {
         List<Alumno> alumnos;
@@ -20,6 +21,58 @@ namespace Clases_Instanciables
             Legislacion,
             SPD
         }
+
+        #region Propiedades
+
+        public List<Alumno> Alumnos
+        {
+            get
+            {
+                return this.alumnos;
+            }
+            set
+            {
+                this.alumnos = value;
+            }
+        }
+
+        public List<Profesor> Instructores
+        {
+            get
+            {
+                return this.profesores;
+            }
+            set
+            {
+                this.profesores = value;
+            }
+        }
+
+        public List<Jornada> Jornadas
+        {
+            get
+            {
+                return this.jornada;
+            }
+            set
+            {
+                this.jornada = value;
+            }
+        }
+
+        public Jornada this[int i]
+        {
+            get
+            {
+                return this.jornada[i];
+            }
+            set
+            {
+                this.jornada[i] = value;
+            }
+        }
+
+        #endregion
 
         #region Constructores
 
@@ -56,18 +109,18 @@ namespace Clases_Instanciables
 
         private string MostrarDatos(Universidad uni)
         {
-            StringBuilder datos = new StringBuilder();
-            datos.AppendLine("UNIVERSIDAD: ");
-            datos.AppendLine("Jornada:");
-            foreach (Jornada j in uni.Jornadas)
+            StringBuilder rtn = new StringBuilder();
+            rtn.AppendLine("JORNADA: ");
+            foreach (Jornada j in uni.jornada)
             {
-                datos.Append(j.ToString());
+                rtn.Append(j.ToString());
             }
-            foreach(Alumno aux in uni.alumnos)
+            return rtn.ToString();
+        }
 
-            
-
-            return datos.ToString();
+        public override string ToString()
+        {
+            return MostrarDatos(this);
         }
 
         #endregion
@@ -76,12 +129,7 @@ namespace Clases_Instanciables
 
         public static bool operator ==(Universidad u, Alumno a)
         {
-            foreach(Alumno aux in u.alumnos)
-            {
-                if (aux.Equals(a))
-                    return true;
-            }
-            return false;
+            return u.alumnos.Contains(a);
         }
 
         public static bool operator !=(Universidad u, Alumno a)
@@ -91,12 +139,7 @@ namespace Clases_Instanciables
 
         public static bool operator ==(Universidad u, Profesor p)
         {
-            foreach(Profesor aux in u.profesores)
-            {
-                if (aux.Equals(p))
-                    return true;
-            }
-            return false;
+            return u.profesores.Contains(p);
         }
 
         public static bool operator !=(Universidad u, Profesor p)
@@ -126,25 +169,14 @@ namespace Clases_Instanciables
 
         public static Universidad operator +(Universidad u, EClases c)
         {
-            Jornada j = null;
-            foreach(Profesor aux in u.profesores)
+            Profesor p = u == c;
+            Jornada j = new Jornada(c, p);
+            foreach(Alumno aux in u.alumnos)
             {
-                if(aux == c)
-                {
-                    j = new Jornada(c, aux);
-                }
+                if (aux == c)
+                    j.Alumnos.Add(aux);
             }
-            if(j != null)
-            {
-                foreach(Alumno aux in u.alumnos)
-                {
-                    if(aux == c)
-                    {
-                        j += aux;
-                    }
-                }
-                u.jornada.Add(j);
-            }
+            u.jornada.Add(j);
             return u;
         }
         

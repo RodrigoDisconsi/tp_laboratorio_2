@@ -1,0 +1,6 @@
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Excepciones\bin\Debug\Excepciones.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Excepciones\bin\Debug\Excepciones.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Excepciones\obj\Debug\Excepciones.csprojAssemblyReference.cache
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Excepciones\obj\Debug\Excepciones.csproj.CoreCompileInputs.cache
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Excepciones\obj\Debug\Excepciones.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Excepciones\obj\Debug\Excepciones.pdb

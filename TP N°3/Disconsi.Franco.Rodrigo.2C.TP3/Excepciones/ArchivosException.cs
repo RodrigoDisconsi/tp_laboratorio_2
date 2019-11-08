@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Excepciones
 {
-    public class ArchivoException : Exception
+    public class ArchivosException : Exception
     {
-        public ArchivoException(Exception innerException) : base(innerException.Message, innerException)
+        public ArchivosException(Exception innerException) : base(innerException.Message, innerException)
         {
 
         }

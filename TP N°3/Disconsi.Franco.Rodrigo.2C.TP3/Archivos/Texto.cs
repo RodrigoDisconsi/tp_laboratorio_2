@@ -35,7 +35,7 @@ namespace Archivos
             }
             catch (Exception e)
             {
-                throw new ArchivoException(e);
+                throw new ArchivosException(e);
             }
         }
 
@@ -51,7 +51,7 @@ namespace Archivos
             }
             catch(Exception e)
             {
-                throw new ArchivoException(e);
+                throw new ArchivosException(e);
             }
         }
     }

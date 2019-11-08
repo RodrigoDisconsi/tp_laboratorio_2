@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Excepciones
 {
-    public class NacionalidadInvalidException : Exception
+    public class NacionalidadInvalidaException : Exception
     {
-        public NacionalidadInvalidException() : base()
+        public NacionalidadInvalidaException() : base()
         {
 
         }
 
-        public NacionalidadInvalidException(string mensaje) : base(mensaje)
+        public NacionalidadInvalidaException(string mensaje) : base(mensaje)
         {
 
         }

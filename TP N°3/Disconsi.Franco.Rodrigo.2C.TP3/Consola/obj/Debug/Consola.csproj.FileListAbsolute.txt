@@ -1,0 +1,16 @@
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Consola.exe.config
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Consola.exe
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Consola.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Archivos.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Clases Abstractas.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Clases Instanciables.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Excepciones.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Archivos.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Clases Abstractas.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Clases Instanciables.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\bin\Debug\Excepciones.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\obj\Debug\Consola.csprojAssemblyReference.cache
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\obj\Debug\Consola.csproj.CoreCompileInputs.cache
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\obj\Debug\Consola.csproj.CopyComplete
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\obj\Debug\Consola.exe
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Consola\obj\Debug\Consola.pdb

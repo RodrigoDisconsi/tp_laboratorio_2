@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 using Excepciones;
 using System.Text.RegularExpressions;
 
-namespace Clases_Abstractas
+namespace EntidadesAbstractas
 {
     public abstract class Persona
     {
         string apellido;
         int dni;
-        Enacionalidad nacionalidad;
+        ENacionalidad nacionalidad;
         string nombre;
 
-        public enum Enacionalidad
+        public enum ENacionalidad
         {
             Argentino,
             Extranjero
@@ -67,7 +67,7 @@ namespace Clases_Abstractas
             }
         }
 
-        public Enacionalidad Nacionalidad
+        public ENacionalidad Nacionalidad
         {
             get
             {
@@ -87,55 +87,52 @@ namespace Clases_Abstractas
         {
 
         }
-        public Persona(string nombre, string apellido, Enacionalidad nacionalidad)
+        public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.nacionalidad = nacionalidad;
         }
-
-        public Persona(string nombre, string apellido, int dni, Enacionalidad nacionalidad) : this(nombre, apellido, dni.ToString(), nacionalidad)
-        {
-
-        }
-
-        public Persona(string nombre, string apellido, string dni, Enacionalidad nacionalidad)
+        public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
             this.StringToDNI = dni;
         }
+
+        public Persona(string nombre, string apellido, int dni, ENacionalidad nacionalidad) : this(nombre, apellido, dni.ToString(), nacionalidad)
+        {
+
+        }
+
 
         #endregion
 
 
         #region Validaciones
-        private int ValidarDni(Enacionalidad nacionalidad, string dni)
+        private int ValidarDni(ENacionalidad nacionalidad, string dni)
         {
             int retorno;
             if (int.TryParse(dni, out retorno) && dni.Length < 9 && retorno >= 1 && retorno <= 99999999)
             {
-                if (nacionalidad == Enacionalidad.Argentino && retorno <= 89999999 || nacionalidad == Enacionalidad.Extranjero && retorno <= 99999999)
+                if (nacionalidad == ENacionalidad.Argentino && retorno <= 89999999 || (nacionalidad == ENacionalidad.Extranjero && retorno >= 90000000 && retorno <= 99999999))
                 {
                     return retorno;
                 }
                 else
                 {
-                    throw new NacionalidadInvalidException("Dni y nacionalidad no coincide");
+                    throw new NacionalidadInvalidaException("Nacionalidad inválida");
                 }
             }
-            else
-            {
-                throw new DniInvalidoException("Formato de dni invalido");
-            }
+            throw new DniInvalidoException("Formato de dni invalido");
         }
 
-        private int ValidarDni(Enacionalidad nacionalidad, int dni)
+        private int ValidarDni(ENacionalidad nacionalidad, int dni)
         {
             return this.ValidarDni(nacionalidad, dni.ToString());
         }
 
         private string ValidarNombreApellido(string dato)
         {
-            if (Regex.IsMatch(dato, "^[a - zA - Z] + $"))
+            if (Regex.IsMatch(dato, "^[a-zA-Z]+$"))
             {
 
                 return dato;

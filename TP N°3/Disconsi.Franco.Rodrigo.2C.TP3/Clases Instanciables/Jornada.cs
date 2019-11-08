@@ -93,14 +93,14 @@ namespace Clases_Instanciables
         public override string ToString()
         {
             StringBuilder rtn = new StringBuilder();
-            rtn.AppendLine("JORNADA: ");
             rtn.Append($"CLASE DE {this.clase} POR");
-            rtn.AppendLine(this.instructor.ToString());
+            rtn.Append(this.instructor.ToString());
             rtn.AppendLine("ALUMNOS: ");
             foreach(Alumno aux in this.alumnos)
             {
                 rtn.AppendLine(aux.ToString());
             }
+            rtn.AppendLine("<-------------------------------------->");
             return rtn.ToString();
         }
 
