@@ -60,6 +60,11 @@ namespace Clases_Instanciables
             }
         }
 
+        /// <summary>
+        /// Retorna la jornada en el indice especificado y setea la jornada en el indice especificado.
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
         public Jornada this[int i]
         {
             get
@@ -88,6 +93,11 @@ namespace Clases_Instanciables
 
         #region Métodos
 
+        /// <summary>
+        /// Guarda la universidad en el archivo "ArchivoXml.xml"
+        /// </summary>
+        /// <param name="uni"></param>
+        /// <returns></returns>
         public static bool Guardar(Universidad uni)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\ArchivoXml.xml";
@@ -95,6 +105,10 @@ namespace Clases_Instanciables
             return xml.Guardar(path, uni);
         }
 
+        /// <summary>
+        /// Lee el archivo "ArchivoXml.xml"
+        /// </summary>
+        /// <returns></returns>
         public Universidad Leer()
         {
             Universidad rtn;
@@ -107,6 +121,11 @@ namespace Clases_Instanciables
             return null;
         }
 
+        /// <summary>
+        /// Devuelve un string con los datos de las Jornada de la universidad.
+        /// </summary>
+        /// <param name="uni"></param>
+        /// <returns></returns>
         private string MostrarDatos(Universidad uni)
         {
             StringBuilder rtn = new StringBuilder();
@@ -118,6 +137,10 @@ namespace Clases_Instanciables
             return rtn.ToString();
         }
 
+        /// <summary>
+        /// Hace públicos los datos de la Universidad.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return MostrarDatos(this);
@@ -127,26 +150,56 @@ namespace Clases_Instanciables
 
         #region Operadores
 
+        /// <summary>
+        /// Devuelve true si el Alumno se encuentra en la lista de Alumnos de la universidad.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
         public static bool operator ==(Universidad u, Alumno a)
         {
             return u.alumnos.Contains(a);
         }
 
+        /// <summary>
+        /// Devuelve true si el Alumno no se encuentra en la lista de Alumnos de la universidad.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
         public static bool operator !=(Universidad u, Alumno a)
         {
             return !(u == a);
         }
 
+        /// <summary>
+        /// Devuelve true si el Profesor se encuentra en la lista de Profesores de la universidad.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public static bool operator ==(Universidad u, Profesor p)
         {
             return u.profesores.Contains(p);
         }
 
+        /// <summary>
+        /// Devuelve true si el Profesor no se encuentra en la lista de Profesor de la universidad.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public static bool operator !=(Universidad u, Profesor p)
         {
             return !(u == p);
         }
 
+        /// <summary>
+        /// Devuelve el primer profesor que de la clase y sino lanza una excepción.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public static Profesor operator ==(Universidad u, Universidad.EClases c)
         {
             foreach(Profesor aux in u.profesores)
@@ -157,6 +210,12 @@ namespace Clases_Instanciables
             throw new SinProfesorException();
         }
 
+        /// <summary>
+        /// Devuelve el primer profesor que no de la clase y sino retorna null.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public static Profesor operator !=(Universidad u, EClases c)
         {
             foreach(Profesor aux in u.profesores)
@@ -167,6 +226,12 @@ namespace Clases_Instanciables
             return null;
         }
 
+        /// <summary>
+        /// Agrega una nueva jornada a la Universidad, con la clase pasada por parametro.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public static Universidad operator +(Universidad u, EClases c)
         {
             Profesor p = u == c;
@@ -180,6 +245,12 @@ namespace Clases_Instanciables
             return u;
         }
         
+        /// <summary>
+        /// Agrega el Alumno a la universidad si no se encuentra ya en esta. 
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
         public static Universidad operator +(Universidad u, Alumno a)
         {
             if(u != a)
@@ -190,6 +261,12 @@ namespace Clases_Instanciables
             throw new AlumnoRepetidoException();
         }
 
+        /// <summary>
+        /// Agrega un Profesor a la universidad si no se encuentra ya en esta.
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public static Universidad operator +(Universidad u, Profesor p)
         {
             if(u != p)

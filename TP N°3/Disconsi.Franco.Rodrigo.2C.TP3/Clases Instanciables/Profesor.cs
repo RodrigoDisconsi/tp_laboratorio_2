@@ -33,6 +33,10 @@ namespace Clases_Instanciables
 
         #region Métodos
 
+        /// <summary>
+        /// Devuelve un string con las clases en la que participa el Profesor.
+        /// </summary>
+        /// <returns></returns>
         protected override string ParticiparEnClase()
         {
             StringBuilder rtn = new StringBuilder();
@@ -44,11 +48,19 @@ namespace Clases_Instanciables
             return rtn.ToString();
         }
 
+        /// <summary>
+        /// Hace públicos los datos del Profesor.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return this.MostrarDatos();
         }
 
+        /// <summary>
+        /// Devuelve un string con los dtaos del Profesor.
+        /// </summary>
+        /// <returns></returns>
         protected override string MostrarDatos()
         {
             StringBuilder rtn = new StringBuilder();
@@ -57,9 +69,13 @@ namespace Clases_Instanciables
             return rtn.ToString();
         }
 
+        /// <summary>
+        /// Genera 2 clases aleatorias y las agregas a las clases del Profesor.
+        /// </summary>
         private void _randomClase()
         {
             Universidad.EClases clase1 = (Universidad.EClases)random.Next(0, 3);
+            System.Threading.Thread.Sleep(500);
             Universidad.EClases clase2 = (Universidad.EClases)random.Next(0, 3);
             clasesDelDia.Enqueue(clase1);
             clasesDelDia.Enqueue(clase2);
@@ -68,6 +84,13 @@ namespace Clases_Instanciables
 
         #region Operadores
 
+
+        /// <summary>
+        /// Devuelve true si el profesor da esa clase.
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="clase"></param>
+        /// <returns></returns>
         public static bool operator ==(Profesor i, Universidad.EClases clase)
         {
             foreach(Universidad.EClases aux in i.clasesDelDia)
@@ -78,6 +101,12 @@ namespace Clases_Instanciables
             return false;
         }
 
+        /// <summary>
+        /// Devuelve true si el profesor no da esa clase.
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="clase"></param>
+        /// <returns></returns>
         public static bool operator !=(Profesor i, Universidad.EClases clase)
         {
             return !(i == clase);

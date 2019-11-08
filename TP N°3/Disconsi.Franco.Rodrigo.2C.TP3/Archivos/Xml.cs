@@ -12,6 +12,12 @@ namespace Archivos
 {
     public class Xml <T> : IArchivo<T>
     {
+        /// <summary>
+        /// Guarda los datos en la ruta pasada por parametro en un .xml.
+        /// </summary>
+        /// <param name="archivo"></param>
+        /// <param name="datos"></param>
+        /// <returns></returns>
         public bool Guardar(string archivo, T datos)
         {
             try
@@ -28,6 +34,13 @@ namespace Archivos
                 throw new ArchivosException(e);
             }
         }
+
+        /// <summary>
+        /// Lee el archivo xml de la ruta pasada por parametro y los guarda en datos.
+        /// </summary>
+        /// <param name="archivo"></param>
+        /// <param name="datos"></param>
+        /// <returns></returns>
 
         public bool Leer(string archivo, out T datos)
         {

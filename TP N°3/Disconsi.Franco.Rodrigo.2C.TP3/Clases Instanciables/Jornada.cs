@@ -72,6 +72,11 @@ namespace Clases_Instanciables
 
         #region Métodos
 
+        /// <summary>
+        /// Guarda una jornada en un archivo de texto.
+        /// </summary>
+        /// <param name="j"></param>
+        /// <returns></returns>
         public static bool Guardar(Jornada j)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+ "\\Jornada.txt";
@@ -80,6 +85,10 @@ namespace Clases_Instanciables
                 
         }
 
+        /// <summary>
+        /// Lee el archivo de texto de Jornada.
+        /// </summary>
+        /// <returns></returns>
         public string Leer()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Jornada.txt";
@@ -90,17 +99,23 @@ namespace Clases_Instanciables
             
         }
 
+        /// <summary>
+        /// Hace públicos los datos de la Jornada.
+        /// </summary>
+        /// <returns></returns>
+
         public override string ToString()
         {
             StringBuilder rtn = new StringBuilder();
-            rtn.Append($"CLASE DE {this.clase} POR");
+            rtn.Append($"CLASE DE {this.clase} POR ");
             rtn.Append(this.instructor.ToString());
             rtn.AppendLine("ALUMNOS: ");
             foreach(Alumno aux in this.alumnos)
             {
                 rtn.AppendLine(aux.ToString());
             }
-            rtn.AppendLine("<-------------------------------------->");
+            rtn.AppendLine("<--------------------------------------------------------->");
+            rtn.AppendLine();
             return rtn.ToString();
         }
 
@@ -108,16 +123,34 @@ namespace Clases_Instanciables
 
         #region Operadores
 
+        /// <summary>
+        /// Compara si el alumno toma la clase de la Jornada.
+        /// </summary>
+        /// <param name="j"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
         public static bool operator ==(Jornada j , Alumno a)
         {
             return (a == j.clase);
         }
 
+        /// <summary>
+        /// Devuelve true si el alumno no da la clase de la Jornada.
+        /// </summary>
+        /// <param name="j"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
         public static bool operator !=(Jornada j, Alumno a)
         {
             return !(j == a);
         }
 
+        /// <summary>
+        /// Agrega un Alumno a la Jornada si este no esta ya en la Jornada.
+        /// </summary>
+        /// <param name="j"></param>
+        /// <param name="a"></param>
+        /// <returns></returns>
         public static Jornada operator +(Jornada j, Alumno a)
         {
             foreach(Alumno aux in j.alumnos)

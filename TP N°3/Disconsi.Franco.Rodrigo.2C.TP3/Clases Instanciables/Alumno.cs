@@ -42,19 +42,35 @@ namespace Clases_Instanciables
 
         #region Métodos
 
+        /// <summary>
+        /// Devuelve un string con la clase en la que participa.
+        /// </summary>
+        /// <returns></returns>
+
         protected override string ParticiparEnClase()
         {
-            return $"TOMA CLASE DE: {this.clasesQueToma}";
+            return $"TOMA CLASE DE {this.clasesQueToma}";
         }
+
+        /// <summary>
+        /// Devuelve un string con los datos del Alumno.
+        /// </summary>
+        /// <returns></returns>
 
         protected override string MostrarDatos()
         {
             StringBuilder rtn = new StringBuilder();
             rtn.AppendLine(base.MostrarDatos());
+            rtn.AppendLine();
             rtn.AppendLine($"ESTADO DE CUENTA: {this.estadoCuenta}");
-            rtn.AppendLine(this.ParticiparEnClase());
+            rtn.Append(this.ParticiparEnClase());
             return rtn.ToString();
         }
+
+        /// <summary>
+        /// Hace publicos los datos del Alumno.
+        /// </summary>
+        /// <returns></returns>
 
         public override string ToString()
         {
@@ -64,10 +80,25 @@ namespace Clases_Instanciables
         #endregion
         #region Operadores
 
+        /// <summary>
+        /// Devuelve true si el Alumno da esa clase y el estado de la cuenta no es deudor.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
+
         public static bool operator ==(Alumno a, Universidad.EClases c)
         {
             return (a.clasesQueToma == c && a.estadoCuenta != EEstadoCuenta.Deudor);
         }
+
+
+        /// <summary>
+        /// Devuelve true si el alumno no da la clase.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
 
         public static bool operator !=(Alumno a, Universidad.EClases c)
         {

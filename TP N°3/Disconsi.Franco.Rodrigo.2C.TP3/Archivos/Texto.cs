@@ -10,21 +10,14 @@ namespace Archivos
 {
     public class Texto : IArchivo<string>
     {
+        /// <summary>
+        /// Guarda los datos en la ruta pasada por parametro.
+        /// </summary>
+        /// <param name="archivo"></param>
+        /// <param name="datos"></param>
+        /// <returns></returns>
         public bool Guardar(string archivo, string datos)
         {
-            //try
-            //{
-            //    using (StreamWriter open = new StreamWriter(archivo))
-            //    {
-            //        open.WriteLine(datos);
-            //    }
-            //    return true;
-            //}
-            //catch
-            //{
-            //    return false;
-            //}
-
             try
             {
                 using (StreamWriter open = new StreamWriter(archivo))
@@ -38,6 +31,13 @@ namespace Archivos
                 throw new ArchivosException(e);
             }
         }
+
+        /// <summary>
+        /// Lee el archivo pasado por parametro y los guarda en datos.
+        /// </summary>
+        /// <param name="archivo"></param>
+        /// <param name="datos"></param>
+        /// <returns></returns>
 
         public bool Leer(string archivo, out string datos)
         {
