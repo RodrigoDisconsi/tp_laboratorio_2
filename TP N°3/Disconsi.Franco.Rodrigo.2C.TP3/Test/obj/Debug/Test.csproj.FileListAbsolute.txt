@@ -1,0 +1,25 @@
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Test.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Test.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Archivos.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Clases Abstractas.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Clases Instanciables.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Excepciones.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Archivos.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Clases Abstractas.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Clases Instanciables.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Excepciones.pdb
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\obj\Debug\Test.csprojAssemblyReference.cache
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\obj\Debug\Test.csproj.CopyComplete
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\obj\Debug\Test.dll
+D:\Github\tp_laboratorio_2\TP N°3\Disconsi.Franco.Rodrigo.2C.TP3\Test\obj\Debug\Test.pdb
