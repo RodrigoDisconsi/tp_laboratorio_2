@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Correo.cs" />
     <Compile Include="GuardaString.cs" />
     <Compile Include="IMostrar.cs" />
     <Compile Include="Paquete.cs" />
