@@ -7,7 +7,6 @@ using System.Threading;
 
 namespace Entidades
 {
-    public delegate void DelegadoEstado(Paquete.EEstado estado);
     public class Paquete : IMostrar<Paquete>
     {
         string direccionEntrega;
@@ -17,6 +16,7 @@ namespace Entidades
         {
             Ingresado, EnViaje, Entregado
         }
+        public delegate void DelegadoEstado(object sender, EventArgs e);
         public event DelegadoEstado InformaEstado;
 
         public string DireccionEntrega
@@ -61,26 +61,48 @@ namespace Entidades
             this.trackingID = trackingID;
         }
 
+        /// <summary>
+        /// Muestra el ID del paquete y la dirección de entrega.
+        /// </summary>
+        /// <param name="elemento"></param>
+        /// <returns></returns>
         public string MostrarDatos(IMostrar<Paquete> elemento)
         {
             return string.Format("{0} para {1}", ((Paquete)elemento).TrackingID, ((Paquete)elemento).direccionEntrega);
         }
+
+        /// <summary>
+        /// Hace que el paquete pase por los 3 EEstado y lo guarda en una base de datos.
+        /// </summary>
         public void MockCicloDeVida()
         {
             for(int i = 0; i < 3; i++)
             {
+                if (this.estado == EEstado.Entregado)
+                    break;
                 this.estado = (EEstado)i;
-                this.InformaEstado.Invoke(this.estado);
+                this.InformaEstado.Invoke(this, null);
                 System.Threading.Thread.Sleep(4000);
             }
-            //Guardar en SQL.
+            PaqueteDAO.Insertar(this);
         }
+
+        /// <summary>
+        /// Hace público los datos del paquete.
+        /// </summary>
+        /// <returns></returns>
 
         public override string ToString()
         {
-            return string.Format(this.MostrarDatos(this) + $"Estado: {this.estado}");
+            return string.Format(this.MostrarDatos(this) + $" estado: {this.estado}");
         }
 
+        /// <summary>
+        /// Dos paquetes son iguales si tienen el mismo TrackingID
+        /// </summary>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <returns></returns>
         public static bool operator ==(Paquete p1, Paquete p2)
         {
             if (p1.trackingID == p2.trackingID)
